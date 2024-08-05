@@ -1,14 +1,15 @@
-// components/RecipeSuggestion.js
+'use client';
+
 import React, { useState } from 'react';
 import { Button, Container, Typography } from '@mui/material';
-import { OpenAIApi, Configuration } from 'openai';
+import { Configuration, OpenAIApi } from 'openai'; // Ensure correct import
 
 const RecipeSuggestion = ({ pantryItems }) => {
   const [recipe, setRecipe] = useState(null);
 
   const fetchRecipe = async () => {
     const configuration = new Configuration({
-      apiKey: 'YOUR_OPENAI_API_KEY',
+      apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY, // Use environment variable
     });
     const openai = new OpenAIApi(configuration);
 
@@ -22,7 +23,7 @@ const RecipeSuggestion = ({ pantryItems }) => {
   };
 
   return (
-    <Container>
+    <Container sx={{ mt: 3 }}>
       <Button variant="contained" color="primary" onClick={fetchRecipe}>
         Get Recipe Suggestion
       </Button>
