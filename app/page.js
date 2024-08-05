@@ -1,5 +1,3 @@
-// app/page.js
-
 'use client';
 
 import React, { useState } from 'react';
@@ -9,11 +7,7 @@ import PantryList from './components/PantryList';
 import ImageCapture from './components/ImageCapture';
 import RecipeSuggestion from './components/RecipeSuggestion';
 
-export const metadata = {
-  title: 'Pantry Management App',
-  description: 'Manage your pantry items efficiently',
-};
-
+// Remove metadata export from here
 export default function Home() {
   const [itemToEdit, setItemToEdit] = useState(null);
   const [pantryItems, setPantryItems] = useState([]);
