@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { Button, Container, Typography } from '@mui/material';
-import { Configuration, OpenAIApi } from 'openai';
+import { Configuration, OpenAIApi } from 'openai';  // Correct import
 
 const RecipeSuggestion = ({ pantryItems }) => {
   const [recipe, setRecipe] = useState(null);

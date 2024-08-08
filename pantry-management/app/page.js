@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Container, Typography, Box } from '@mui/material';
 import PantryForm from './components/PantryForm';
 import PantryList from './components/PantryList';
@@ -10,6 +10,12 @@ import RecipeSuggestion from './components/RecipeSuggestion';
 export default function Home() {
   const [itemToEdit, setItemToEdit] = useState(null);
   const [pantryItems, setPantryItems] = useState([]);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      // Your client-side code here
+    }
+  }, []);
 
   return (
     <Container sx={{ py: 4 }}>
